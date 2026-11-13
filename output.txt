@@ -1,0 +1,31 @@
+=== 0. Abstract class cannot be instantiated ===
+TypeError: Can't instantiate abstract class LibraryItem without an implementation for abstract methods 'describe', 'late_fee'
+
+=== 1. Borrowing with error handling ===
+Alice borrowed: Book: Python 101 by A. Rao (ID 1)
+Could not borrow: 'Python 101' is already borrowed.
+
+=== 2. Limit and not-borrowed errors ===
+Bob borrowed: Magazine: Tech Today, issue #45 (ID 2)
+Could not borrow: Bob has reached the limit of 1 item(s).
+Alice now has: ['Python 101', 'Data Structures', 'Operating Systems']
+Could not borrow: Alice has reached the limit of 3 item(s).
+Could not return: Alice has not borrowed 'Tech Today'.
+
+=== 3. Returning with late fees ===
+Alice returned 'Python 101'. Late fee: Rs 6
+Bob returned 'Tech Today'. Late fee: Rs 0
+Alice's items: ['Data Structures', 'Operating Systems']
+Bob's items: []
+
+=== 4. Polymorphism: one loop, no type checks ===
+Book: Python 101 by A. Rao (ID 1) -> late fee for 3 days: Rs 6
+Magazine: Tech Today, issue #45 (ID 2) -> late fee for 3 days: Rs 3
+DVD: Intro to Algorithms, 120 min (ID 3) -> late fee for 3 days: Rs 15
+
+=== 5. Class attribute shared by all objects ===
+Total items created: 5
+
+=== 6. Encapsulation ===
+AttributeError: 'Book' object has no attribute '__available'
+Using the method instead -> available? True
